@@ -1,0 +1,41 @@
+.cardDesign {
+  font-size: large;
+  border-right: 3px solid #6099ba;
+  border-left: 3px solid #6099ba;
+}
+
+.card-header {
+  text-align: center;
+  font-size: Large;
+  font-weight: 500;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  background-color: #4abdac;
+  color: white;
+}
+
+.listBankContent {
+  align-self: center;
+  color: black;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.addButton {
+  background-color: #6883bc;
+}
+
+.test {
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.active {
+  background-color: #deeef7ad;
+}

@@ -1,0 +1,86 @@
+<div class="container-fluid mt-4 w-75">
+  <div>
+    <button mat-raised-button class="topButtons ms-0">
+      <a class="topButtonsLink" routerLink="/">Daily Tasks </a>
+    </button>
+    <button mat-raised-button class="topButtons">
+      <a class="topButtonsLink" routerLink="/donetask">Done Tasks </a>
+    </button>
+    <button mat-raised-button class="topButtons" (click)="onDeleteList()">
+      Delete Table
+    </button>
+  </div>
+
+  <div class="card cardDesign mt-2">
+    <div class="card-header">{{ list.title }}</div>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Date</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let t of tasks">
+        <td class="pt-3">{{ t.title }}</td>
+        <td class="pt-3">{{ t.description }}</td>
+        <td class="pt-3">{{ t.date }}</td>
+        <td>
+          <button
+            mat-icon-button
+            color="primary"
+            title="Task Done!"
+            (click)="doneTask(t)"
+          >
+            <mat-icon>done</mat-icon>
+          </button>
+
+          <a [routerLink]="['/newtask', list._id, t._id]"
+            ><button
+              class="ms-2"
+              mat-icon-button
+              color="primary"
+              title="Edit Task"
+              (click)="editingTask(t)"
+            >
+              <mat-icon>edit</mat-icon>
+            </button>
+          </a>
+
+          <button
+            class="ms-2"
+            mat-icon-button
+            color="primary"
+            title="Delete Task"
+            (click)="deleting(t._id)"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+
+          <button
+            class="ms-2"
+            mat-icon-button
+            color="primary"
+            title="Move to Daily Task"
+            (click)="moveToDailyTasks(t)"
+          >
+            <mat-icon> forward </mat-icon>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table>
+    <tr class="row d-flex justify-content-center matCardDesign">
+      <button mat-mini-fab class="addButton">
+        <a [routerLink]="['/newtask', list._id]">
+          <mat-icon class="iconDesign">add</mat-icon>
+        </a>
+      </button>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,25 @@
+<div class="container-fluid mt-4 w-75">
+  <button mat-raised-button class="topButtons ms-0">
+    <a class="topButtonsLink" routerLink="/">Daily Tasks </a>
+  </button>
+  <div class="card cardDesign mt-2">
+    <div class="card-header">Done Tasks</div>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let t of tasks">
+        <td>{{ t.title }}</td>
+        <td>{{ t.description }}</td>
+        <td>{{ t.date }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

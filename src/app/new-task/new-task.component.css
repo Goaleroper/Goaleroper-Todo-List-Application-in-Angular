@@ -1,0 +1,38 @@
+.card {
+  border-right: 4px solid #6099ba;
+  border-left: 4px solid #6099ba;
+}
+
+.card-header {
+  font-weight: 400;
+  font-size: large;
+  background-color: #4abdac;
+  color: white;
+  height: 3em;
+}
+
+.formDesign {
+  width: 100%;
+}
+
+.fontStyle {
+  font-size: large;
+  font-weight: 400;
+}
+
+.form-control:focus {
+  border-color: #f5f5f5;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background-color: #f5f5f5;
+}
+
+button {
+  background-color: #6099ba;
+  margin-top: 1rem;
+  color: white;
+}
+button[disabled] {
+  background-color: lightgrey;
+}

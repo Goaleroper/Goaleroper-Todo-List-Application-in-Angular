@@ -1,0 +1,44 @@
+.example-container {
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+  align-items: center;
+}
+
+th {
+  background-color: #f7b733;
+  font-weight: 550;
+  font-size: medium;
+  color: rgb(82, 80, 80);
+  text-align-last: center;
+}
+td {
+  text-align-last: center;
+}
+
+.card-header {
+  text-align: center;
+  font-size: Large;
+  font-weight: 500;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  background-color: #4abdac;
+  color: white;
+}
+
+.cardDesign {
+  margin-bottom: 1rem;
+}
+
+.topButtons {
+  margin-left: 10px;
+  background-color: #efecf3e3;
+  color: rgba(34, 33, 33, 0.842);
+}
+
+.topButtonsLink {
+  text-decoration: none;
+  color: rgba(34, 33, 33, 0.842);
+}

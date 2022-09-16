@@ -1,0 +1,46 @@
+<div class="card cardDesign">
+  <div class="card-header">List Bank</div>
+
+  <mat-nav-list class="test">
+    <mat-list-item *ngFor="let list of lists" routerLinkActive="active">
+      <div class="listBankContent" *ngIf="list.title === 'Daily Tasks'">
+        <a [routerLink]="['/']"> Daily Tasks </a>
+      </div>
+      <a
+        *ngIf="list.title != 'Daily Tasks'"
+        matLine
+        class="listBankContent"
+        [routerLink]="['/lists', list._id]"
+      >
+        {{ list.title }}
+      </a>
+    </mat-list-item>
+
+    <form #newListForm="ngForm" (ngSubmit)="onClickSubmit(newListForm.value)">
+      <mat-form-field
+        class="example-full-width {{ display }}"
+        appearance="fill"
+      >
+        <mat-label>List Title</mat-label>
+
+        <input matInput ngModel #title="ngModel" name="title" required />
+        <mat-error *ngIf="title.touched && title.invalid"
+          >Title is required</mat-error
+        ><button
+          matSuffix
+          mat-icon-button
+          value="submit"
+          [disabled]="!newListForm.valid"
+        >
+          <mat-icon>add</mat-icon>
+        </button>
+      </mat-form-field>
+    </form>
+
+    <div class="row d-flex justify-content-center mb-2">
+      <button mat-mini-fab class="addButton" (click)="showDiv()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+  </mat-nav-list>
+</div>
