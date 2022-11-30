@@ -5,7 +5,7 @@ This project was generated in [Angular CLI](https://github.com/angular/angular-c
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-Back-end isn't included but API is called using HTTP Services to add/remove tasks and lists.
+Back-end isn't included but in source code there is HTTP services to call API and  add/edit/remove tasks and lists.
 
 ## Code scaffolding
 
