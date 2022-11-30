@@ -1,18 +1,18 @@
 <div class="container-fluid mt-4 w-75">
   <div>
-    <button mat-raised-button class="topButtons ms-0">
-      <a class="topButtonsLink" routerLink="/">Daily Tasks </a>
+    <button mat-raised-button class="top-buttons ms-0">
+      <a class="top-buttons-link" routerLink="/">Daily Tasks </a>
     </button>
-    <button mat-raised-button class="topButtons">
-      <a class="topButtonsLink" routerLink="/donetask">Done Tasks </a>
+    <button mat-raised-button class="top-buttons">
+      <a class="top-buttons-link" routerLink="/donetask">Done Tasks </a>
     </button>
-    <button mat-raised-button class="topButtons" (click)="onDeleteList()">
+    <button mat-raised-button class="top-buttons" (click)="onDeleteList()">
       Delete Table
     </button>
   </div>
 
-  <div class="card cardDesign mt-2">
-    <div class="card-header">{{ list.title }}</div>
+  <div class="card card-header-design mt-2">
+    <div class="card-header">{{ list["title"] }}</div>
   </div>
 
   <table class="table">
@@ -39,7 +39,7 @@
             <mat-icon>done</mat-icon>
           </button>
 
-          <a [routerLink]="['/newtask', list._id, t._id]"
+          <a [routerLink]="['/newtask', list['_id'], t._id]"
             ><button
               class="ms-2"
               mat-icon-button
@@ -76,9 +76,9 @@
   </table>
   <table>
     <tr class="row d-flex justify-content-center matCardDesign">
-      <button mat-mini-fab class="addButton">
-        <a [routerLink]="['/newtask', list._id]">
-          <mat-icon class="iconDesign">add</mat-icon>
+      <button mat-mini-fab class="add-button">
+        <a [routerLink]="['/newtask', list['_id']]">
+          <mat-icon class="icon-design">add</mat-icon>
         </a>
       </button>
     </tr>

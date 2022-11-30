@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { TasksService } from '../tasks.service';
+import { Tasks } from '../items';
+import { TasksService } from '../services/tasks.service';
 
 @Component({
   selector: 'app-new-task',
@@ -8,35 +9,35 @@ import { TasksService } from '../tasks.service';
   styleUrls: ['./new-task.component.css'],
 })
 export class NewTaskComponent implements OnInit {
-  tasks: any = [];
-  task: any = [];
-  listID: number;
-  id: any;
-  Tid;
+  tasks: Tasks[]=[];
+  task: Tasks[] = [];
+  id: string;
+  taskId: string;
+
   constructor(
-    private serviceT: TasksService,
+    private serviceTask: TasksService,
     private route: ActivatedRoute,
     private router: Router
-  ) {
-    this.Tid = this.route.snapshot.paramMap.get('Tid');
-    this.serviceT.getForEdit(this.Tid).subscribe((p) => {
-      this.task = p;
-    });
-  }
+  ) {}
 
   ngOnInit() {
+    this.taskId = this.route.snapshot.paramMap.get('taskId');
+
+    this.serviceTask.getForEdit(this.taskId).subscribe((task) => {
+      this.task = task;
+    });
+
     this.route.paramMap.subscribe((params) => {
       this.id = params.get('id');
     });
   }
 
-  onClickSubmit(task) {
-    if (this.Tid) {
-      task._id = this.Tid;
-      this.serviceT.updateTask(task).subscribe(task);
-      console.log(task);
-    } else task.list = this.id;
-    this.serviceT.addTask(task).subscribe((task) => {
+  onClickSubmit(task:Tasks[]) {
+    if (this.taskId) {
+      task['_id'] = this.taskId;
+      this.serviceTask.updateTask(task).subscribe();
+    } else task['list'] = this.id;
+    this.serviceTask.addTask(task).subscribe((task) => {
       this.tasks.push(task);
     });
     this.router.navigate(['/lists/', this.id]);

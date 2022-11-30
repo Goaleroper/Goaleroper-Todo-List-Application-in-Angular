@@ -1,4 +1,4 @@
-.cardDesign {
+.card-header-design {
   font-size: large;
   border-right: 3px solid #6099ba;
   border-left: 3px solid #6099ba;
@@ -14,18 +14,18 @@
   color: white;
 }
 
-.listBankContent {
+.list-bank-content {
   align-self: center;
   color: black;
   margin-right: auto;
   margin-left: auto;
 }
 
-.addButton {
+.add-button {
   background-color: #6883bc;
 }
 
-.test {
+.list-design {
   position: relative;
   overflow-y: auto;
   overflow-x: hidden;

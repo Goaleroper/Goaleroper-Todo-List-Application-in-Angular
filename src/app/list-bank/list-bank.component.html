@@ -1,15 +1,15 @@
-<div class="card cardDesign">
+<div class="card card-header-design">
   <div class="card-header">List Bank</div>
 
-  <mat-nav-list class="test">
+  <mat-nav-list class="list-design">
     <mat-list-item *ngFor="let list of lists" routerLinkActive="active">
-      <div class="listBankContent" *ngIf="list.title === 'Daily Tasks'">
+      <div class="list-bank-content" *ngIf="list.title === 'Daily Tasks'">
         <a [routerLink]="['/']"> Daily Tasks </a>
       </div>
       <a
         *ngIf="list.title != 'Daily Tasks'"
         matLine
-        class="listBankContent"
+        class="list-bank-content"
         [routerLink]="['/lists', list._id]"
       >
         {{ list.title }}
@@ -38,7 +38,7 @@
     </form>
 
     <div class="row d-flex justify-content-center mb-2">
-      <button mat-mini-fab class="addButton" (click)="showDiv()">
+      <button mat-mini-fab class="add-button" (click)="showDiv()">
         <mat-icon>add</mat-icon>
       </button>
     </div>

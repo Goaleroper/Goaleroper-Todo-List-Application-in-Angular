@@ -8,15 +8,15 @@
   color: white;
 }
 
-.cardDesign {
+.card-header-design {
   margin-bottom: 1rem;
 }
 
-.addButton {
+.add-button {
   background-color: #6883bc;
   align-self: center;
 }
-.iconDesign {
+.icon-design {
   color: white;
 }
 
@@ -35,13 +35,13 @@ td {
   text-align-last: center;
 }
 
-.topButtons {
+.top-buttons {
   margin-left: 10px;
   background-color: #efecf3e3;
   color: rgba(34, 33, 33, 0.842);
 }
 
-.topButtonsLink {
+.top-buttons-link {
   text-decoration: none;
   color: rgba(34, 33, 33, 0.842);
 }

@@ -1,10 +1,10 @@
 export interface Tasks {
-  _id: any;
+  _id: number;
   title: String;
   description?: String;
   done?: Boolean;
   date?: Date;
-  list: any;
+  list: Lists[];
   position: number;
 }
 

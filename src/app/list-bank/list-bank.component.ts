@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Lists } from '../main-list/items';
-import { ListsService } from './../lists.service';
+import { Lists } from '../items';
+import { ListsService } from './../services/lists.service';
 
 @Component({
   selector: 'app-list-bank',
@@ -8,21 +8,22 @@ import { ListsService } from './../lists.service';
   styleUrls: ['./list-bank.component.css'],
 })
 export class ListBankComponent implements OnInit {
-  lists: Lists[] = [];
-  list: any = [];
+  lists: Lists[];
+  list: Lists[];
 
-  constructor(private serviceL: ListsService) {}
+  constructor(private serviceList: ListsService) {}
 
   ngOnInit() {
-    this.serviceL.getItems().subscribe((lists) => (this.lists = lists));
+    this.serviceList.getListItems().subscribe((lists) => (this.lists = lists));
   }
 
   display = 'd-none';
   showDiv() {
     this.display = 'd-block';
   }
-  onClickSubmit(list) {
-    this.serviceL.addList(list).subscribe((list) => {
+
+  onClickSubmit(list: Lists) {
+    this.serviceList.addList(list).subscribe((list) => {
       this.lists.push(list);
     });
     this.display = 'd-none';

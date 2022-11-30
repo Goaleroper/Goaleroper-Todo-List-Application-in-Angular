@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col-3"></div>
     <div class="col-9">
-      <button mat-raised-button class="topButtons ms-4">
-        <a class="topButtonsLink" routerLink="/donetask">Done Tasks </a>
+      <button mat-raised-button class="top-buttons ms-4">
+        <a class="top-buttons-link" routerLink="/donetask">Done Tasks </a>
       </button>
     </div>
   </div>
@@ -11,8 +11,8 @@
     <div class="col-3 mt-2"><app-list-bank></app-list-bank></div>
     <div class="col-9">
       <div class="ms-4">
-        <div class="card cardDesign mt-2">
-          <div class="card-header">{{ list.title }}</div>
+        <div class="card card-header-design mt-2">
+          <div class="card-header">{{ list["title"] }}</div>
         </div>
 
         <table class="table">
@@ -26,9 +26,9 @@
           </thead>
           <tbody>
             <tr *ngFor="let t of tasks">
-              <td class="pt-3">{{ t.title }}</td>
-              <td class="pt-3">{{ t.description }}</td>
-              <td class="pt-3">{{ t.date }}</td>
+              <td class="pt-3">{{ t["title"] }}</td>
+              <td class="pt-3">{{ t["description"] }}</td>
+              <td class="pt-3">{{ t["date"] }}</td>
               <td>
                 <button
                   (click)="doneTask(t)"
@@ -39,7 +39,7 @@
                 >
                   <mat-icon>done</mat-icon>
                 </button>
-                <a [routerLink]="['/newtask', list._id, t._id]"
+                <a [routerLink]="['/newtask', list['_id'], t['_id']]"
                   ><button
                     class="ms-2"
                     mat-icon-button

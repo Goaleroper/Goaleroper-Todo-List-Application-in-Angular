@@ -1,7 +1,3 @@
-.example-container {
-  overflow: auto;
-}
-
 table {
   width: 100%;
   align-items: center;
@@ -28,17 +24,17 @@ td {
   color: white;
 }
 
-.cardDesign {
+.card-header-design {
   margin-bottom: 1rem;
 }
 
-.topButtons {
+.top-buttons {
   margin-left: 10px;
   background-color: #efecf3e3;
   color: rgba(34, 33, 33, 0.842);
 }
 
-.topButtonsLink {
+.top-buttons-link {
   text-decoration: none;
   color: rgba(34, 33, 33, 0.842);
 }

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Tasks } from './main-list/items';
+import { Tasks } from '../items';
 
 @Injectable({
   providedIn: 'root',
@@ -26,7 +26,7 @@ export class TasksService {
     return this.http.get<Tasks[]>(this.URL + '/' + id);
   }
 
-  addTask(task: Task): Observable<any> {
+  addTask(task: Tasks[]): Observable<any> {
     return this.http.post(this.URL, task);
   }
 

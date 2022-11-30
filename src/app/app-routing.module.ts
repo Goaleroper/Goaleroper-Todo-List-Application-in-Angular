@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: '', component: MainListComponent },
   { path: 'lists/:id', component: NewListComponent },
   { path: 'newtask/:id', component: NewTaskComponent },
-  { path: 'newtask/:id/:Tid', component: NewTaskComponent },
+  { path: 'newtask/:id/:taskId', component: NewTaskComponent },
   { path: 'donetask', component: DoneTasksComponent },
   { path: '**', component: MainListComponent },
 ];

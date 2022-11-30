@@ -18,12 +18,14 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { NewTaskComponent } from './new-task/new-task.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { ErrorHandler } from '@angular/core';
 import {
   MatMomentDateModule,
   MAT_MOMENT_DATE_ADAPTER_OPTIONS,
 } from '@angular/material-moment-adapter';
 import { MatNativeDateModule } from '@angular/material/core';
 import { DoneTasksComponent } from './done-tasks/done-tasks.component';
+import { AppErrorHandler } from './common/app-error-handler';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,7 @@ import { DoneTasksComponent } from './done-tasks/done-tasks.component';
   ],
   providers: [
     { provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: { useUtc: true } },
+    { provide: ErrorHandler, useClass: AppErrorHandler },
   ],
   bootstrap: [AppComponent],
 })
