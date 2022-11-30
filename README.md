@@ -1,10 +1,11 @@
 # ToDoListApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
+This project was generated in [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Back-end isn't included but API is called using HTTP Services to add/remove tasks and lists.
 
 ## Code scaffolding
 
